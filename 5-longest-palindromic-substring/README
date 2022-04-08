@@ -1,0 +1,77 @@
+********************************************************************************
+* Longest Palindromic Substring
+* https://leetcode.com/problems/longest-palindromic-substring/
+********************************************************************************
+
+**
+* Naive Solution
+**
+
+    * Description 
+        Check if every possible substring is a palindrome via brute force.
+        Return the longest palindrome found.
+    
+    * Time Complexity
+        O(n^3)
+        There are O(n^2) possible substrings, and it takes O(n) time to check
+        if each substring is a palindrome.
+
+    * Memory Complexity
+        O(n)
+        No significant book keeping is required to check each possible
+        substring. The O(n) output string is the bottleneck.
+
+**
+* Optimal Solution
+**
+
+    * Description
+        Instead of checking if all possible substrings are palindromic, search
+        for the longest palindrome rooted at each index. We can find the longest
+        palindrome for a given index in O(n) time by expanding a substring 
+        outward two characters at a time. We can check if palindromic properties
+        are preserved in O(1) time at each expansion step. We need to find the
+        longest palindrome O(n) times, twice (odd and even length) for each
+        index. Note that if we start from the center letter and work our way
+        outward we can short circuit by not evaluating indices that can't 
+        possibly generate a palindrome longer than the longest one we've found.
+        For example, there is no need to check longest palindrome centered at
+        index 0 when we already have a palindrome of length of at least 1.
+
+    * Time Complexity
+        O(n^2)
+        There are O(n) possible indices that we can use as palindrome roots,
+        and it takes O(n) time to find the longest palindrome for an index.
+
+    * Memory Complexity
+        O(n)
+        Iterating over the indices from the middle out requires no significant
+        memory overhead. Finding the longest palindrome at an index requires
+        O(n) memory because we have to make O(n) recursive calls. Output string
+        also requires O(n) memory.
+
+**
+* Dynamic Programming Solution
+**
+
+    * Description
+        One could accomplish a similar optimization as above via dynamic
+        programming. You could keep track of all substrings you've checked and
+        whether or not they were palindromes. Doing so would mitigate redundant
+        operations and allow us to check if a substring is palindromic in O(1)
+        time. Short circuiting would not be as natural, but could probably
+        still be implemented. Dynamic programming would also require O(n^2)
+        memory complexity because it'd require keeping a map of all possible
+        substrings in memory.
+
+    * Time Complexity
+        O(n^2)
+        This implemenation would iterate over O(n^2) substrings. Checking if
+        a substring is palindromic would be reduced to O(1) by referring to
+        previous substrings.
+
+    * Memory Complexity
+        O(n^2)
+        This implementations would require a map of O(n^2) substrings.
+
+

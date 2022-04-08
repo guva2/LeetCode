@@ -1,0 +1,13 @@
+LeetCode Problems
+
+This is a personal repository containing solutions to LeetCode Problems. I'll
+try to include a README for each problem that discusses complexity, small 
+optimizations, and tradeoffs. Note that I'll ignore inputs but not outputs when
+analyzing the memory complexity of a solution.
+
+This project uses the following tools to streamline my development process:
+    * A Python script that generates skeleton files for new problems
+    * Gradle to facilitate building and testing
+        * Jacoco test coverage plugin
+        * Checkstyle plugin with a modified version of Sun's coding standards
+    * Git for version control

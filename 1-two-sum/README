@@ -1,0 +1,39 @@
+********************************************************************************
+* Two Sum
+* https://leetcode.com/problems/two-sum/
+********************************************************************************
+
+**
+* Naive Solution
+**
+
+    * Description 
+        Try adding every combination of unique numbers in the array until the
+        target sum is found.
+    
+    * Time Complexity
+        O(n^2)
+        This requires a nested loop on the input array. One loop is required
+        for each of the two summands.
+
+    * Memory Complexity
+        O(1)
+        No significant datastructures are required for the naive solution.
+
+**
+* Optimal Solution
+**
+
+    * Description
+        Iterate over the numbers in the array, keeping a (num -> index) map for
+        past numbers. As we iterate, check the map for the complementary number
+        (target - num). Once we find a match, return the corresponding indices.
+
+    * Time Complexity
+        O(n)
+        This implementation requires a single iteration over the input array.
+        We can put/get numbers from the map in O(1) time using a hash map.
+
+    * Memory Complexity
+        O(n)
+        This solution requires a map of O(n) size for book keeping.

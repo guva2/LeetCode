@@ -1,0 +1,49 @@
+********************************************************************************
+* Median of Two Sorted Arrays
+* https://leetcode.com/problems/median-of-two-sorted-arrays/
+********************************************************************************
+
+**
+* Naive Solution
+**
+
+    * Description 
+        Iterate over both arrays in sorted order by comparing the next values in
+        each array until the median is found.
+    
+    * Time Complexity
+        O(m + n)
+        We need to iterate over half of the total numbers to reach the median.
+
+    * Memory Complexity
+        O(1)
+        No significant additional memory is required. The input arrays are the
+        bottleneck.
+
+**
+* Optimal Solution
+**
+
+    * Description
+        Binary search over the shorter array until a median is found. We can do
+        this by calculating the indices in the longer array that would precede/
+        succeed the candidate median in the shorter array. If the candidate
+        median falls between the preceding/succeeding numbers, we've found the
+        median. Otherwise we can continue our binary search depending on whether
+        the candidate median was too big or too small. Note that when the median
+        is not in the shorter array, we can still track the index at which it 
+        would have been. Using this information, we can deduce the index of the
+        median in the longer array in constant time.
+
+    * Time Complexity
+        O(log min(m, n))
+        By always searching over the smaller array we are no longer bottlenecked
+        by the size of the longer array. Note that when the median is in the 
+        longer array, we can deduce it in O(1) time after our binary search of
+        the shorter array.
+
+    * Memory Complexity
+        O(log min(m, n))
+        Our binary search requires O(log min(m, n)) memory due to the recursive
+        calls, each of which require O(1) memory.
+        

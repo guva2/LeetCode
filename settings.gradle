@@ -1,0 +1,19 @@
+rootProject.name = 'leetcode'
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        testLibs {
+            version('junit', '5.8.2')
+            library('junit-jupiter', 'org.junit.jupiter', 'junit-jupiter').versionRef('junit') 
+        }
+        toolLibs {
+            version('checkstyle', '10.1')
+        }
+    }
+}
+
+include '1-two-sum'
+include '2-add-two-numbers'
+include '3-longest-substring-without-repeating-characters'
+include '4-median-of-two-sorted-arrays'
+include '5-longest-palindromic-substring'

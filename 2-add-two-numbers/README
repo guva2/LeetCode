@@ -1,0 +1,24 @@
+********************************************************************************
+* Add Two Numbers
+* https://leetcode.com/problems/add-two-numbers/
+********************************************************************************
+
+**
+* Solution
+**
+
+    * Description 
+        Iterate over both linked lists node by node and write the sum of their
+        values to a new linked list. Limit each output node to a single digit by
+        carrying remainders over to the next node. Nothing fancy here. The naive
+        solution is the best solution. 
+    
+    * Time Complexity
+        O(n + m)
+        We iterate over both input lists once, and write a length O(max(n, m))
+        output list once.
+
+    * Memory Complexity
+        O(max(n, m))
+        The output list is at most 1 node longer than the longer input list.
+

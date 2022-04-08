@@ -1,0 +1,10 @@
+package me.guva.leetcode.$package_name;
+
+import org.junit.jupiter.api.Test;
+
+class SolutionTest {
+    @Test
+    void simpleTest() {
+        final $output_parameter output = Solution.$method_name();
+    }
+}

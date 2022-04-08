@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'jacoco'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(testLibs.junit.jupiter)
+}
+
+checkstyle {
+    toolVersion = toolLibs.versions.checkstyle.get()
+}
+
+test {
+    useJUnitPlatform()
+    dependsOn cleanTest
+    finalizedBy jacocoTestReport
+    testLogging {
+        events('passed', 'skipped', 'failed')
+    }
+}
+
+check {
+    dependsOn jacocoTestCoverageVerification
+}
+
+jacocoTestReport {
+    dependsOn test
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+            excludes = ['me.guva.leetcode.add_two_numbers.ListNode']
+            limit {
+                minimum = 1.0
+            }
+        }
+    }
+}

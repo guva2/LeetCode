@@ -1,0 +1,52 @@
+********************************************************************************
+* Longest Substring Without Repeating Characters
+* https://leetcode.com/problems/longest-substring-without-repeating-characters/
+********************************************************************************
+
+**
+* Naive Solution
+**
+
+    * Description 
+        Check every possible substring for duplicates via brute force.
+    
+    * Time Complexity
+        O(n^3)
+        There are O(n^2) possible substrings, and it takes O(n) time to check
+        each substring for duplicates.
+
+    * Memory Complexity
+        O(n)
+        This implementation would require some book keeping when checking for
+        duplicates that would need to hold O(n) characters in the worst case
+        (i.e. a string with no duplicates).
+
+**
+* Optimal Solution
+**
+
+    * Description
+        Use a dynamic sliding window to get snapshots of the longest substrings
+        without duplicates from the optimal starting positions. Advance the 
+        tail of the window until we find a duplicate and record the length of 
+        the windowed substring. Advance the head until the duplicate is removed
+        then repeat the process. Return the length of the longest substring 
+        found. We can track duplicates by keeping a set of seen characters.
+        Simply add each character that the tail iterates over, and remove each
+        character that the head iterates over. Note that I use a bitmap in my
+        solution as a bit of a micro optimization, but this solution can easily
+        be adapted to use a hash set.
+
+    * Time Complexity
+        O(1)
+        We advance the tail and head O(n) times each. We are able to do all
+        book keeping operations for an iteration in O(1) time with our set. My
+        implementation uses a bitmap representing all ascii characters, but a
+        hash set would also work with O(1) complexity.
+
+    * Memory Complexity
+        O(k)
+        My bitmap implementation is actually O(k) where k is the size of the
+        character alphabet. This is generally fine as long as k is sufficiently
+        small. For large k, we could switch to a hash set implementation that
+        would maintain O(n) memory complexity.
