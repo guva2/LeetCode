@@ -1,8 +1,6 @@
 package me.guva.leetcode.$package_name;
 
-final class Solution {
-    private Solution() { }
-
+class Solution {
 	public static $output_parameter $method_name($input_parameters) {
 	}
 }
