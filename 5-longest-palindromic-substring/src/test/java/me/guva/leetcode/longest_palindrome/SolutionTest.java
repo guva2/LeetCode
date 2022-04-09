@@ -28,6 +28,11 @@ class SolutionTest {
      */
     private static final int ASCII_ALPHABET_START = 97;
 
+    /**
+     * The solution that we are testing.
+     */
+    private final Solution solution = new Solution();
+
     private static String generateString(final int length,
             final Function<Integer, Character> letterGenerator) {
         final StringBuilder builder = new StringBuilder();
@@ -39,7 +44,7 @@ class SolutionTest {
 
     @Test
     void firstExampleTest() {
-        final String output = Solution.longestPalindrome("babad");
+        final String output = solution.longestPalindrome("babad");
         final int expectedOutputLength = 3;
         assertEquals(expectedOutputLength, output.length());
     }
@@ -48,7 +53,7 @@ class SolutionTest {
     void secondExampleTest() {
         final String input = "cbbd";
         final String expectedOutput = "bb";
-        final String output = Solution.longestPalindrome(input);
+        final String output = solution.longestPalindrome(input);
         assertEquals(expectedOutput, output);
     }
 
@@ -56,7 +61,7 @@ class SolutionTest {
     void minLengthTest() {
         final String input = generateString(MIN_LENGTH, ignore -> 'g');
         final String expectedOutput = input;
-        final String output = Solution.longestPalindrome(input);
+        final String output = solution.longestPalindrome(input);
         assertEquals(expectedOutput, output);
     }
 
@@ -64,7 +69,7 @@ class SolutionTest {
     void maxLengthPalindromeTest() {
         final String input = generateString(MAX_LENGTH, ignore -> 'g');
         final String expectedOutput = input;
-        final String output = Solution.longestPalindrome(input);
+        final String output = solution.longestPalindrome(input);
         assertEquals(expectedOutput, output);
     }
 
@@ -75,7 +80,7 @@ class SolutionTest {
         };
         final String input = generateString(MAX_LENGTH, alphabetCycler);
         final int expectedOutputLength = 1;
-        final String output = Solution.longestPalindrome(input);
+        final String output = solution.longestPalindrome(input);
         assertEquals(expectedOutputLength, output.length());
     }
 }

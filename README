@@ -8,6 +8,13 @@ analyzing the memory complexity of a solution.
 This project uses the following tools to streamline my development process:
     * A Python script that generates skeleton files for new problems
     * Gradle to facilitate building and testing
+        * Junit test plugin
         * Jacoco test coverage plugin
         * Checkstyle plugin with a modified version of Sun's coding standards
     * Git for version control
+
+It's worth mentioning that I'll be implementing solutions with functional static
+methods because the format works better for simple LeetCode problems than OOP.
+This approach (1) lets me easily integrate JUnit and Jacoco to comprehensively
+test implementations with 100% test coverage and (2) facilitates copy/pasting
+solutions directly into LeetCode.

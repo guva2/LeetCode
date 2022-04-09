@@ -1,12 +1,10 @@
 package me.guva.leetcode.add_two_numbers;
 
-final class Solution {
+class Solution {
     /**
      * The problem is framed in base 10.
      */
     private static final int BASE = 10;
-
-    private Solution() { }
 
     public static ListNode addTwoNumbers(final ListNode l1, final ListNode l2) {
         final ListNode header = new ListNode(0);

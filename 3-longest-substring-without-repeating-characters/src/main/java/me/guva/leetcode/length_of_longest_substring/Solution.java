@@ -1,12 +1,10 @@
 package me.guva.leetcode.length_of_longest_substring;
 
-final class Solution {
+class Solution {
     /**
      * All characters must be one of the 256 ASCII Characters.
      */
     private static final int ASCII_RANGE = 256;
-
-    private Solution() { }
 
     public static int lengthOfLongestSubstring(final String s) {
         final boolean[] charBitMap = new boolean[ASCII_RANGE];

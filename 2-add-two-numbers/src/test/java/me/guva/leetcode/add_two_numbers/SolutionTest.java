@@ -6,6 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.Test;
 
 class SolutionTest {
+    /**
+     * The solution that we are testing.
+     */
+    private final Solution solution = new Solution();
+
     private ListNode createList(final int[] digits) {
         ListNode output = null;
         for (int i = digits.length - 1; i >= 0; i--) {
@@ -37,7 +42,7 @@ class SolutionTest {
         final ListNode l2 = createList(secondInputArray);
         final ListNode expectedOutput = createList(expectedOutputArray);
 
-        final ListNode output = Solution.addTwoNumbers(l1, l2);
+        final ListNode output = solution.addTwoNumbers(l1, l2);
         assertListEquals(expectedOutput, output);
     }
 
@@ -51,7 +56,7 @@ class SolutionTest {
         final ListNode l2 = createList(secondInputArray);
         final ListNode expectedOutput = createList(expectedOutputArray);
 
-        final ListNode output = Solution.addTwoNumbers(l1, l2);
+        final ListNode output = solution.addTwoNumbers(l1, l2);
         assertListEquals(expectedOutput, output);
     }
 
@@ -65,7 +70,7 @@ class SolutionTest {
         final ListNode l2 = createList(secondInputArray);
         final ListNode expectedOutput = createList(expectedOutputArray);
 
-        final ListNode output = Solution.addTwoNumbers(l1, l2);
+        final ListNode output = solution.addTwoNumbers(l1, l2);
         assertListEquals(expectedOutput, output);
     }
 
@@ -79,7 +84,7 @@ class SolutionTest {
         final ListNode l2 = createList(secondInputArray);
         final ListNode expectedOutput = createList(expectedOutputArray);
 
-        final ListNode output = Solution.addTwoNumbers(l1, l2);
+        final ListNode output = solution.addTwoNumbers(l1, l2);
         assertListEquals(expectedOutput, output);
     }
 
@@ -93,7 +98,7 @@ class SolutionTest {
         final ListNode l2 = createList(secondInputArray);
         final ListNode expectedOutput = createList(expectedOutputArray);
 
-        final ListNode output = Solution.addTwoNumbers(l1, l2);
+        final ListNode output = solution.addTwoNumbers(l1, l2);
         assertListEquals(expectedOutput, output);
     }
 
@@ -107,7 +112,7 @@ class SolutionTest {
         final ListNode l2 = createList(secondInputArray);
         final ListNode expectedOutput = createList(expectedOutputArray);
 
-        final ListNode output = Solution.addTwoNumbers(l1, l2);
+        final ListNode output = solution.addTwoNumbers(l1, l2);
         assertListEquals(expectedOutput, output);
     }
 }

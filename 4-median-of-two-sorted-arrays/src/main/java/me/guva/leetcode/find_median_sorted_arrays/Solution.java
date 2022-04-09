@@ -1,8 +1,6 @@
 package me.guva.leetcode.find_median_sorted_arrays;
 
-final class Solution {
-    private Solution() { }
-
+class Solution {
     public static double findMedianSortedArrays(final int[] nums1,
                                                 final int[] nums2) {
         final int[][] orderedArrays = sortArraysByLength(nums1, nums2);

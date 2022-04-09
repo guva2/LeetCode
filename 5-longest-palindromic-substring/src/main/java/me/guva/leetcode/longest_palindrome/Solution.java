@@ -1,6 +1,6 @@
 package me.guva.leetcode.longest_palindrome;
 
-final class Solution {
+class Solution {
     /**
      * We use a half step offset from the middle of the string when iterating
      * in order to account for both even and odd length palindromes. A
@@ -8,8 +8,6 @@ final class Solution {
      * palindrome whose index is X.0 is even with X as its upper center.
      */
     private static final double OFFSET_INCREMENT = 0.5;
-
-    private Solution() { }
 
     public static String longestPalindrome(final String s) {
         final double mid = s.length() / 2.0;

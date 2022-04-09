@@ -5,12 +5,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class SolutionTest {
+    /**
+     * The solution that we are testing.
+     */
+    private final Solution solution = new Solution();
+
     @Test
     void firstExampleTest() {
         final int[] nums1 = new int[] {1, 3};
         final int[] nums2 = new int[] {2};
         final double expectedOutput = 2.0;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -19,7 +24,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {1, 2};
         final int[] nums2 = new int[] {3, 4};
         final double expectedOutput = 2.5;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -28,7 +33,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {2, 2, 4, 4};
         final int[] nums2 = new int[] {2, 2, 4, 4};
         final double expectedOutput = 3.0;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -37,7 +42,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {1, 2, 3, 4, 5, 6};
         final int[] nums2 = new int[] {};
         final double expectedOutput = 3.5;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -46,7 +51,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {};
         final int[] nums2 = new int[] {1, 2, 3, 4, 5, 6};
         final double expectedOutput = 3.5;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -55,7 +60,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {1, 2, 3, 4, 5};
         final int[] nums2 = new int[] {6, 7, 8, 9, 10};
         final double expectedOutput = 5.5;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -64,7 +69,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {6, 7, 8, 9, 10};
         final int[] nums2 = new int[] {1, 2, 3, 4, 5};
         final double expectedOutput = 5.5;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -73,7 +78,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {1, 3, 5, 7, 9};
         final int[] nums2 = new int[] {2, 4, 6, 8, 10};
         final double expectedOutput = 5.5;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -83,7 +88,7 @@ class SolutionTest {
         final int[] nums2 = new int[] {2, 2, 2, 2, 2, 2, 2, 2, 2,
                                        2, 2, 2, 2, 2, 2, 2, 2, 2};
         final double expectedOutput = 2.0;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -92,7 +97,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {1, 2, 3};
         final int[] nums2 = new int[] {4, 5, 6, 7, 8, 9};
         final double expectedOutput = 5.0;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -101,7 +106,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {1, 2, 3};
         final int[] nums2 = new int[] {4, 5, 6, 7, 8, 9, 10};
         final double expectedOutput = 5.5;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -110,7 +115,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {1, 2, 3};
         final int[] nums2 = new int[] {4, 5, 6, 7, 8, 9};
         final double expectedOutput = 5.0;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 
@@ -119,7 +124,7 @@ class SolutionTest {
         final int[] nums1 = new int[] {1, 2, 3};
         final int[] nums2 = new int[] {4, 5, 6, 7, 8, 9, 10};
         final double expectedOutput = 5.5;
-        final double output = Solution.findMedianSortedArrays(nums1, nums2);
+        final double output = solution.findMedianSortedArrays(nums1, nums2);
         assertEquals(expectedOutput, output);
     }
 }

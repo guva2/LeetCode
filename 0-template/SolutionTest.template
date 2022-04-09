@@ -3,8 +3,13 @@ package me.guva.leetcode.$package_name;
 import org.junit.jupiter.api.Test;
 
 class SolutionTest {
+    /**
+     * The solution that we are testing.
+     */
+    private final Solution solution = new Solution();
+
     @Test
     void simpleTest() {
-        final $output_parameter output = Solution.$method_name();
+        final $output_parameter output = solution.$method_name();
     }
 }

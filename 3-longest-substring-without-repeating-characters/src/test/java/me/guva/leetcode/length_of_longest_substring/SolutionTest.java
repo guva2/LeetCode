@@ -4,10 +4,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class SolutionTest {
+    /**
+     * The solution that we are testing.
+     */
+    private final Solution solution = new Solution();
+
     @Test
     void firstExampleTest() {
         final String input = "abcabcbb";
-        final int output = Solution.lengthOfLongestSubstring(input);
+        final int output = solution.lengthOfLongestSubstring(input);
         final int expectedOutput = 3;
         assertEquals(expectedOutput, output);
     }
@@ -15,7 +20,7 @@ class SolutionTest {
     @Test
     void secondExampleTest() {
         final String input = "bbbbb";
-        final int output = Solution.lengthOfLongestSubstring(input);
+        final int output = solution.lengthOfLongestSubstring(input);
         final int expectedOutput = 1;
         assertEquals(expectedOutput, output);
     }
@@ -23,7 +28,7 @@ class SolutionTest {
     @Test
     void thirdExampleTest() {
         final String input = "pwwkew";
-        final int output = Solution.lengthOfLongestSubstring(input);
+        final int output = solution.lengthOfLongestSubstring(input);
         final int expectedOutput = 3;
         assertEquals(expectedOutput, output);
     }
@@ -31,7 +36,7 @@ class SolutionTest {
     @Test
     void emptyStringTest() {
         final String input = "";
-        final int output = Solution.lengthOfLongestSubstring(input);
+        final int output = solution.lengthOfLongestSubstring(input);
         final int expectedOutput = 0;
         assertEquals(expectedOutput, output);
     }
@@ -39,7 +44,7 @@ class SolutionTest {
     @Test
     void noRepeatedCharactersTest() {
         final String input = "arstneio";
-        final int output = Solution.lengthOfLongestSubstring(input);
+        final int output = solution.lengthOfLongestSubstring(input);
         final int expectedOutput = 8;
         assertEquals(expectedOutput, output);
     }
@@ -53,7 +58,7 @@ class SolutionTest {
             input += repeatedString;
         }
 
-        final int output = Solution.lengthOfLongestSubstring(input);
+        final int output = solution.lengthOfLongestSubstring(input);
         final int expectedOutput = 10;
         assertEquals(expectedOutput, output);
     }
