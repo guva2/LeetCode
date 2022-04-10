@@ -1,0 +1,50 @@
+********************************************************************************
+* Zigzag Conversion
+* https://leetcode.com/problems/zigzag-conversion/
+********************************************************************************
+
+**
+* Naive Solution
+**
+
+    * Description 
+        Generate a matrix of characters and actually create the zigzag within
+        that matrix. Then iterate over the matrix from left to right -> top to
+        bottom, adding all non whitespace characters to an output string. Then
+        return the output string.
+    
+    * Time Complexity
+        O(n * k)
+        Each matrix will need to be O(n) characters wide and k rows tall. This
+        solution entails iterating over every coordinate in the matrix.
+
+    * Memory Complexity
+        O(n * k)
+        This method requires building an O(n) * k matrix in memory.
+
+**
+* Optimal Solution
+**
+
+    * Description
+        Iterate over the input string in cycles by row. The total length (l) of
+        a zigzag can be derived from numRows (k) as follows:
+
+            l = (k * 2) - 2
+
+        Using this information we can build a row by taking the letters from
+        each cycle at the corresponding offset(s). For example we know the top
+        row will consist only of letters at offset 0, 1st row will consist only
+        of letters at offsets 1 and n-1, etc. Do this arithmetic for each row,
+        and build the output string in order by picking out the letters from the
+        input string using the calculated indices.
+
+    * Time Complexity
+        O(n)
+        We need to add n letters to the output string. Adding each letter simply
+        requires some O(1) arithmetic and an O(1) look up on the input string.
+
+    * Memory Complexity
+        O(n)
+        The output string will be n characters long. No other significant memory
+        overhead is required.
