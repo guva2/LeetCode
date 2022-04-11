@@ -1,0 +1,26 @@
+********************************************************************************
+* Reverse Integer
+* https://leetcode.com/problems/reverse-integer/
+********************************************************************************
+
+**
+* Solution
+**
+
+    * Description 
+        The best solution is the naive solution. Simply iterate over the input
+        digits from least significant to most significant, and add them to an
+        output number from most significant to least significant. The only tiny
+        little optimization I made was to check for overflow only when reversing
+        the final digit. It is easier, but marginally slower, to check for
+        overflow at every digit.
+    
+    * Time Complexity
+        O(n)
+        We have to iterate over the n input digits 1 at a time and append each
+        digit to an output number in O(1) time.
+
+    * Memory Complexity
+        O(n)
+        The output number has O(n) digits. No other significant memory overhead
+        is required.
