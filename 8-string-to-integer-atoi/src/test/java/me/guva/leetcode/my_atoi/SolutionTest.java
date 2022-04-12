@@ -97,4 +97,20 @@ class SolutionTest {
         final int output = solution.myAtoi(input);
         assertEquals(expectedOutput, output);
     }
+
+    @Test
+    void longPositiveIntegerTest() {
+        final String input = "999999999999999999999999999999999999999999999999";
+        final int expectedOutput = 2147483647;
+        final int output = solution.myAtoi(input);
+        assertEquals(expectedOutput, output);
+    }
+
+    @Test
+    void longNegativeIntegerTest() {
+        final String input = "-99999999999999999999999999999999999999999999999";
+        final int expectedOutput = -2147483648;
+        final int output = solution.myAtoi(input);
+        assertEquals(expectedOutput, output);
+    }
 }
