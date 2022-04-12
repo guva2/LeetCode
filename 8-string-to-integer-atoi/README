@@ -1,0 +1,35 @@
+********************************************************************************
+* String to Integer Atoi
+* https://leetcode.com/problems/string-to-integer-atoi/
+********************************************************************************
+
+**
+* Solution
+**
+
+    * Description
+        This problem clearly defined an algorithm to be implemented. As such,
+        the problem statement basically provides the solution:
+            - Read and ignore all leading whitespace characters
+            - Read and parse '+' or '-' if it exists to determine number sign
+            - Read and parse digits to determine number value
+            - Return number according to parsed sign and value
+        The spirit of the problem seemed to be to do the low level work
+        yourself. For this reason I chose to read and parse the digits myself
+        1 character at a time, as opposed to collecting all the digits and
+        calling Integer.parseInt(). This also allowed me to include a micro
+        optimization in short circuiting and returning the clamped value for
+        very long numbers.
+
+    * Time Complexity
+        O(n)
+        We need to iterate over n digits in the worst case. We ignore each
+        irrelevant character in O(1) time, and read/process each relevant
+        sign/digit in O(1) time.
+
+    * Memory Complexity
+        O(1)
+        Because we short circuit once the number associated with an input string
+        overflows, we never keep more than a 31 bit unsigned integer and its
+        sign in memory. Our output integer is 32 bits, regardless of the length
+        of the input string.

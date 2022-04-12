@@ -1,0 +1,59 @@
+package me.guva.leetcode.my_atoi;
+
+class Solution {
+    private static final char WHITESPACE_CHAR = ' ';
+    private static final char NEGATIVE_SIGN_CHAR = '-';
+    private static final char POSITIVE_SIGN_CHAR = '+';
+    private static final int BASE = 10;
+            
+    public static int myAtoi(final String s) {
+        final CharacterIterator iterator = new StringCharacterIterator(s);
+        ignoreWhitespace(iterator);
+
+        int output = 0;
+        final int signMultiplicand = readSignMultiplicand(iterator);
+        
+
+    }
+
+    private static void ignoreWhitespace(final CharacterIterator iterator) {
+        while (iterator.current() == WHITESPACE_CHAR) {
+            iterator.next();
+        }
+    }
+
+    private static int readSignMultiplicand(final CharacterIterator iterator) {
+        int signMultiplicand = 1
+        switch (iterator.current()) {
+            case NEGATIVE_SIGN_CHAR:
+                signMultiplicand = -1;
+            case POSITIVE_SIGN_CHAR:
+                iterator.next();
+            default;
+                return signMultiplicand;
+        }
+    }
+
+    private static int readDigits(final CharacterIterator iterator) {
+        int output = 0;
+        int digit = iterator.current()
+        while (Character.isDigit(digit)) {
+            if (willOverflow(output
+            output = addDigit(output, digit);
+
+            
+        }
+
+    }
+
+    private static int addDigit(final int number, final int digit) {
+        final int translatedNumber = number * 10;
+        return translatedNumber + digit;
+    }
+
+    private static boolean willUnderflow(final int number,
+                                         final int digit) {
+        final int tenthMinValue = Integer.MIN_VALUE / BASE;
+        return reversed < tenthMinValue;
+    }
+}
