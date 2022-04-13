@@ -21,6 +21,12 @@
         optimization in short circuiting and returning the clamped value for
         very long numbers.
 
+        Note that I chose to use StringCharacterIterator for readability, but
+        included an uglier solution that uses indexed charAt() lookups in the
+        git commit history. The indexed charAt implementation performs as well
+        as any other submission on LeetCode. This is an arbitrary metric but I
+        like getting high scores so I wanted this revision to exist in history.
+
     * Time Complexity
         O(n)
         We need to iterate over n digits in the worst case. We ignore each

@@ -91,8 +91,9 @@ class Solution {
     }
 
     private static void ignoreWhitespace(final CharacterIterator iterator) {
-        while (iterator.current() == WHITESPACE_CHAR) {
-            iterator.next();
+        char nextChar = iterator.current();
+        while (nextChar == WHITESPACE_CHAR) {
+            nextChar = iterator.next();
         }
     }
 
