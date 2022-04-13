@@ -1,5 +1,8 @@
 package me.guva.leetcode.my_atoi;
 
+import java.text.CharacterIterator;
+import java.text.StringCharacterIterator;
+
 class Solution {
     /**
      * The problem defines the space character as the only whitespace character.
@@ -79,40 +82,46 @@ class Solution {
     }
 
     public static int myAtoi(final String s) {
-        int i = 0;
-        while (i < s.length() && s.charAt(i) == WHITESPACE_CHAR) {
-            i++;
-        }
-
-        SIGN sign = SIGN.POSITIVE;
-        if (i < s.length()) {
-            switch (s.charAt(i)) {
-                case NEGATIVE_SIGN_CHAR:
-                    sign = SIGN.NEGATIVE;
-                case POSITIVE_SIGN_CHAR:
-                    i++;
-                default:
-                    break;
-            }
-        }
-
-        final int minValue = sign.getMinValue();
-        int value = 0;
-        while (i < s.length()) {
-            final char digitChar = s.charAt(i);
-            final int digit = Character.digit(digitChar, BASE);
-            if (digit == -1) {
-                return sign.getMultiplicand() * value;
-            }
-            if (willUnderflow(value, digit, minValue)) {
-                return sign.getMultiplicand() * minValue;
-            }
-            value = appendDigit(value, digit);
-            i++;
-        }
-
+        final CharacterIterator iterator = new StringCharacterIterator(s);
+        ignoreWhitespace(iterator);
+        final SIGN sign = readSign(iterator);
+        final int value = readDigits(iterator, sign.getMinValue());
         return sign.getMultiplicand() * value;
 
+    }
+
+    private static void ignoreWhitespace(final CharacterIterator iterator) {
+        char nextChar = iterator.current();
+        while (nextChar == WHITESPACE_CHAR) {
+            nextChar = iterator.next();
+        }
+    }
+
+    private static SIGN readSign(final CharacterIterator iterator) {
+        SIGN sign = SIGN.POSITIVE;
+        switch (iterator.current()) {
+            case NEGATIVE_SIGN_CHAR:
+                sign = SIGN.NEGATIVE;
+            case POSITIVE_SIGN_CHAR:
+                iterator.next();
+            default:
+                return sign;
+        }
+    }
+
+    private static int readDigits(final CharacterIterator iterator,
+                                  final int minValue) {
+        int output = 0;
+        char digitChar = iterator.current();
+        while (Character.isDigit(digitChar)) {
+            final int digit = Character.digit(digitChar, BASE);
+            if (willUnderflow(output, digit, minValue)) {
+                return minValue;
+            }
+            output = appendDigit(output, digit);
+            digitChar = iterator.next();
+        }
+        return output;
     }
 
     private static int appendDigit(final int number, final int digit) {
