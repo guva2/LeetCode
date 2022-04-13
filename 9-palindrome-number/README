@@ -13,6 +13,13 @@
         construct a reversed number by appending these digits to a number from
         most significant to least significant.
 
+        Note that it seems theoretically possible to falsely report a number as
+        palindromic if reversing it results in an overflow that coincidentally
+        reproduces the number. I don't think such a number exists within the
+        range of 32-bit signed integers. This is why my implementation uses a
+        long to reverse the number. This could also be accomplished by checking
+        for overflow at every iteration.
+
     * Time Complexity
         O(n)
         We must iterate over O(n) digits to test the number is palindromic.
