@@ -113,4 +113,12 @@ class SolutionTest {
         final int output = solution.myAtoi(input);
         assertEquals(expectedOutput, output);
     }
+
+    @Test
+    void emptyStringTest() {
+        final String input = "";
+        final int expectedOutput = 0;
+        final int output = solution.myAtoi(input);
+        assertEquals(expectedOutput, output);
+    }
 }
