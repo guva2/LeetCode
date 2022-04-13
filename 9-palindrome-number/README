@@ -1,0 +1,24 @@
+********************************************************************************
+* Palindrome Number
+* https://leetcode.com/problems/palindrome-number/
+********************************************************************************
+
+**
+* Solution
+**
+
+    * Description
+        Nothing fancy. The naive solution is the best solution. Iterate over the
+        input number from least significant to most significant digit and
+        construct a reversed number by appending these digits to a number from
+        most significant to least significant.
+
+    * Time Complexity
+        O(n)
+        We must iterate over O(n) digits to test the number is palindromic.
+
+    * Memory Complexity
+        O(n)
+        This implementation requires that we keep a reversed number of O(n)
+        length in memory.
+
