@@ -1,0 +1,57 @@
+********************************************************************************
+* Regular Expression Matching
+* https://leetcode.com/problems/regular-expression-matching/
+********************************************************************************
+
+**
+* Naive Solution
+**
+
+    * Description 
+        The naive solution would be to recursively check all valid possibilities
+        branching from a matching prefix, until the entire string and pattern
+        are matched. Note that this would be optimal if we didn't have to
+        consider the `*` operator. With the `*` operator, it is possible for the
+        naive solution to execute redundant computations.
+    
+    * Time Complexity
+        The worst case would be one where the pattern uses the `*` operator with
+        a pattern that lead to multiple redundant states, resulting in an
+        exponential time complexity.
+
+    * Memory Complexity
+        The worst case would also result in exponential memory complexity due to
+        all of the redundant recursions.
+
+**
+* Optimal Solution
+**
+
+    * Description
+        The optimal solution is the same as the naive solution, but uses dynamic
+        programming to avoid redundant computation. Before calculating if the
+        remaining pattern and string match, the execution checks a cache to see
+        if the calculation has already been done.
+
+    * Time Complexity
+        O(mn) where m and n are the length of the pattern and string.
+
+    * Memory Complexity
+        O(mn) where m and n are the length of the pattern and string.
+
+**
+* Further Discussion 
+**
+
+    * Description
+        This problem gives us a new pattern and string with each execution, but
+        we could actually improve runtime if the same pattern were reused across
+        many strings. Initialization  of the pattern would be expensive using
+        traditional regex compilation, but matching would be much faster.
+
+    * Time Complexity
+        O(2 ^ m) for pattern construction and  O(n) for string matching.
+
+    * Memory Complexity
+        O(2 ^ m)
+
