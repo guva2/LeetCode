@@ -1,0 +1,38 @@
+********************************************************************************
+* Container With Most Water
+* https://leetcode.com/problems/container-with-most-water/
+********************************************************************************
+
+**
+* Naive Solution
+**
+
+    * Description 
+        The naive solution would be to run a nested iteration over all possible
+        combinations of lines and pick out the largest area.
+    
+    * Time Complexity
+        O(n^2)
+
+    * Memory Complexity
+        O(1)
+
+**
+* Optimal Solution
+**
+
+    * Description
+        Intuitively, we can deduce that if we have two pairs of lines with
+        different lengths, the pair with the shorter length can only hold more
+        water if the effective height is taller than the effective height of 
+        the pair with a greater length. We can use this property to iterate
+        over the lines more intelligently. If we run a double ended iteration
+        across all lines while always keeping the longer line in a pair, we
+        can guarantee that we will find the maximum area without checking all 
+        possible combinations.
+
+    * Time Complexity
+        O(n)
+
+    * Memory Complexity
+        O(1)
